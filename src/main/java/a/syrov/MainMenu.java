@@ -1,12 +1,15 @@
 package a.syrov;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class MainMenu {
     private final Scanner scanner;
+    private final List<CocktailRecipes> allCocktails;
 
-    public MainMenu(Scanner scanner) {
+    public MainMenu(Scanner scanner, List<CocktailRecipes> allCocktails) {
         this.scanner = scanner;
+        this.allCocktails = allCocktails;
     }
 
     public void show() {
@@ -24,7 +27,7 @@ public class MainMenu {
 
             switch (choice) {
                 case 1:
-                    RecipesMenu recipesMenu = new RecipesMenu(scanner);
+                    RecipesMenu recipesMenu = new RecipesMenu(scanner, allCocktails);
                     recipesMenu.show();
                     break;
                 case 2:

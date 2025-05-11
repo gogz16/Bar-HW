@@ -1,18 +1,17 @@
 package a.syrov;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class RecipesMenu {
 
     private Scanner scanner;
+    private List<CocktailRecipes> allCocktails;
 
-    public RecipesMenu(Scanner scanner) {
+    public RecipesMenu(Scanner scanner, List<CocktailRecipes> allCocktails) {
         this.scanner = scanner;
+        this.allCocktails = allCocktails;
     }
-
-//    public void recipesMenu() {
-//        this.scanner = new Scanner(System.in);
-//    }
 
     public void show() {
         while (true) {
@@ -32,6 +31,7 @@ public class RecipesMenu {
                     break;
                 case 2:
                     System.out.println("Выполняется Опция 'Просмотр всех рецептов'");
+                    showAllRecipes();
                     break;
                 case 3:
                     System.out.println("Выполняется Опция 'Поиск рецепта по названию'");
@@ -41,6 +41,19 @@ public class RecipesMenu {
                 default:
                     System.out.println("\nВыбран некорректный пункт меню! Попробуйте еще раз!");
             }
+        }
+    }
+
+    // Метод для вывода всех рецептов
+    private void showAllRecipes() {
+        System.out.println("\nВыполняется Опция 'Просмотр всех рецептов'");
+        if (allCocktails.isEmpty()) {
+            System.out.println("Рецептов пока нет!");
+            return;
+        }
+
+        for (CocktailRecipes cocktail : allCocktails) {
+            System.out.println(cocktail);  // Используем toString()
         }
     }
 }

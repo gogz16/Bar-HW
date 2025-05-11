@@ -10,10 +10,6 @@ public class StockMenu {
         this.scanner = scanner;
     }
 
-//    public void stockMenu() {
-//        this.scanner = new Scanner(System.in);
-//    }
-
     public void show() {
         while (true) {
             System.out.println("\n=== Управление запасами ===");

@@ -10,10 +10,6 @@ public class SaleMenu {
         this.scanner = scanner;
     }
 
-//    public void saleMenu() {
-//        this.scanner = new Scanner(System.in);
-//    }
-
     public void show() {
         while (true) {
             System.out.println("\n=== Продажа коктейля ===");
